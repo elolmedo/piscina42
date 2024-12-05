@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rolmedo- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/03 11:09:27 by rolmedo-          #+#    #+#             */
+/*   Updated: 2024/12/03 11:22:20 by rolmedo-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_str_is_lowercase(char *str)
+{
+	int	index;
+	int	response;
+
+	index = 0;
+	if (str[index] == '\0')
+		response = 0;
+	while ( str[index] != '\0')
+	{
+		if( str[index] >= 141 && str[index] <= 172)
+			response = 1;
+		else
+		{
+			response = 0;
+			break;
+		}
+		index++;
+	}
+	str[index] = '\0';
+	return (response);
+}
+int	main(void)
+{
+	char 	string[] = "eee";
+	int	response;
+
+	response = ft_str_is_lowercase(string);
+	response = response+'0';
+	write(1, &response, 1);
+}
